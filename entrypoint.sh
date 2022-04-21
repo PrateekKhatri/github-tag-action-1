@@ -8,6 +8,9 @@ release_branches=${RELEASE_BRANCHES:-master}
 custom_tag=${CUSTOM_TAG}
 source=${SOURCE:-.}
 
+# since https://github.blog/2022-04-12-git-security-vulnerability-announced/ runner uses?
+git config --global --add safe.directory /github/workspace
+
 cd ${GITHUB_WORKSPACE}/${source}
 
 pre_release="true"
